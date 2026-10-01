@@ -1,0 +1,65 @@
+:root{--ink:#1d2b24;--bg:#faf9f7;--green:#1f3a2e;--blush:#f5e5de;--coral:#b4452c;--line:#ddd5cf;--serif:"DM Serif Display",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{font:400 1.0625rem/1.65 var(--sans);color:var(--ink);background:var(--bg)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.25em}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.wrap{width:min(1120px,100% - 2rem);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+svg{width:1.15rem;height:1.15rem;flex:none}
+header.site{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.35rem}
+.brand img{height:54px;width:auto;mix-blend-mode:multiply}
+nav{display:flex;align-items:center;gap:1.6rem}
+nav a.lnk:not(.btn){text-decoration:none;font-weight:500}
+.icon{display:grid;place-items:center;width:2.5rem;height:2.5rem;border:1.5px solid var(--green);border-radius:50%;transition:background .2s,color .2s}
+.icon:hover{background:var(--green);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.9rem 1.5rem;border:1.5px solid var(--green);background:var(--green);color:#fff;font-weight:700;text-decoration:none;border-radius:999px;transition:background .2s,color .2s}
+.btn:hover{background:transparent;color:var(--green)}
+.btn.ghost{background:transparent;color:var(--green)}
+.btn.ghost:hover{background:var(--green);color:#fff}
+.btn.small{padding:.5rem 1.1rem;font-size:.95rem}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1}
+h1{font-size:clamp(2.3rem,6vw,4rem)}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:1.75rem}
+h3{font-size:1.5rem;margin-bottom:.35rem}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center;padding-block:3.5rem 4.5rem}
+.lead{font-size:1.2rem;max-width:34rem;margin-top:1.25rem}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.rating{margin-top:1.5rem;color:var(--coral);font-weight:700}
+.hero-img img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px}
+section{padding-block:4.5rem}
+section.hero{padding-block:0}
+section.alt{background:var(--blush)}
+.services{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 3rem}
+.services li{padding:1.4rem 0 1.8rem;border-top:1.5px solid var(--green)}
+.gallery{columns:3;column-gap:1rem}
+.gallery img{width:100%;margin-bottom:1rem;border-radius:14px;break-inside:avoid}
+.more{margin-top:.75rem}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+table{border-collapse:collapse;width:100%}
+th,td{padding:.75rem 0;border-bottom:1px solid var(--line);font-weight:400;text-align:left}
+td{text-align:right}
+.addr{margin-top:1.5rem}
+address{font-style:normal}
+.actions{display:flex;flex-direction:column;gap:.75rem;align-items:stretch}
+iframe{display:block;width:100%;height:340px;border:0;margin-top:2.5rem;border-radius:14px}
+.mail{margin-top:.5rem;text-align:center}
+footer{padding-block:1.75rem;border-top:1px solid var(--line);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.callbar{display:none}
+@media (max-width:820px){
+  .hero .wrap{grid-template-columns:1fr;gap:2rem;padding-block:2rem 3rem}
+  .services,.contact{grid-template-columns:1fr;gap:1rem}
+  .contact{gap:2rem}
+  .gallery{columns:2;column-gap:.6rem}
+  .gallery img{margin-bottom:.6rem;border-radius:10px}
+  nav a.lnk{display:none}
+  .cta .btn{flex:1 1 100%}
+  section{padding-block:3rem}
+  body{padding-bottom:calc(4.5rem + env(safe-area-inset-bottom))}
+  .callbar{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;position:fixed;inset:auto 0 0 0;z-index:20;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--line)}
+  .callbar a{display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.85rem .25rem;background:var(--green);color:#fff;font-weight:700;text-decoration:none;border-radius:999px;font-size:.98rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.icon{transition:none}}
